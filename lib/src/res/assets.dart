@@ -1,6 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
 class Assets {
+  static const Logo = 'assets/png/logo.png';
   static const ADD = 'assets/png/29/add.png';
   static const SUSHI = 'assets/png/29/sushi.png';
   static const DELIVERY = 'assets/png/29/delivery.png';
