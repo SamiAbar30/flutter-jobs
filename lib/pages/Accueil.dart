@@ -83,9 +83,7 @@ class _AccueilState extends State<Accueil> {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.only(
-            left: 24.w,
-          ),
+          padding: EdgeInsets.only(left: 15.w, right: 15.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -131,44 +129,213 @@ class _AccueilState extends State<Accueil> {
               SizedBox(
                 height: 13.h,
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(
-                    2,
-                    (index) => Padding(
-                      padding: EdgeInsets.only(right: 48.w),
-                      child: Text("rtr")
-                    ),
-                  ).toList(),
+              Container(
+                color: Color(0xffffffff),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      Column(
+                        children: List.generate(
+                          4,
+                          (index) => Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: DropdownSearch<String>(
+                                items: List.generate(
+                              2,
+                              (index) => "sdsds",
+                            ).toList()),
+                          ),
+                        ).toList(),
+                      ),
+                      ElevatedButton(
+                        onPressed: () => {},
+                        style: ElevatedButton.styleFrom(
+                          primary: const Color(0xFF5F4BE2),
+                          elevation: 0,
+                          shadowColor: Colors.transparent,
+                          fixedSize: Size(200.w, 50.h),
+                        ),
+                        child: Text(
+                          "Rechrcher",
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
+                            color: const Color(0xffffffff),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
-              DropdownSearch<String>(
-                  items: List.generate(2,
-                        (index) => "sdsds",
-                  ).toList()),
               SizedBox(
                 height: 23.h,
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(
-                    12,
-                    (index) => Page51ListItem(),
-                  ).toList(),
-                ),
+              Column(
+                children: [
+                  _DefultText(),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(
+                        5,
+                        (index) => Page51ListItem(),
+                      ).toList(),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  ElevatedButton(
+                    onPressed: () => {},
+                    style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFF3C3F41),
+                      elevation: 0,
+                      shadowColor: Colors.transparent,
+                      fixedSize: Size(300.w, 50.h),
+                    ),
+                    child: Text(
+                      "Voir toutes les categories",
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w600,
+                        color: const Color(0xffffffff),
+                      ),
+                    ),
+                  )
+                ],
               ),
               SizedBox(
                 height: 46.h,
               ),
               Container(
-                height: 190.h,
-                color: Color(0xffC4C4C4),
-                margin: EdgeInsets.only(
-                  right: 24.w,
+                width: 500.w,
+                color: Color(0xffeeeeee),
+                child: Column(
+                  children: [
+                    _DefultText(),
+
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: List.generate(
+                          5,
+                          (index) => Padding(
+                            padding: EdgeInsets.all(20.w),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 290.w,
+                                  height: 350.h,
+                                  color: Color(0xffC4C4C4),
+                                ),
+                                SizedBox(
+                                  height: 12.h,
+                                ),
+                                Text(
+                                  "Model name",
+                                  style: GoogleFonts.workSans(
+                                    textStyle: TextStyle(
+                                      fontSize: 16.sp,
+                                      color: AppColors.black,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 6.h,
+                                ),
+                                Row(
+                                  children: [
+                                    ElevatedButton(
+                                      onPressed: () => {},
+                                      style: ElevatedButton.styleFrom(
+                                        primary: const Color(0xFF5F4BE2),
+                                        elevation: 0,
+                                        shadowColor: Colors.transparent,
+                                        fixedSize: Size(140.w, 50.h),
+                                      ),
+                                      child: Text(
+                                        "Appelez-Nous",
+                                        style: TextStyle(
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w600,
+                                          color: const Color(0xffffffff),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 9.w,
+                                    ),
+                                    ElevatedButton(
+                                      onPressed: () => {},
+                                      style: ElevatedButton.styleFrom(
+                                        primary: const Color(0xFF5F4BE2),
+                                        elevation: 0,
+                                        shadowColor: Colors.transparent,
+                                        fixedSize: Size(140.w, 50.h),
+                                      ),
+                                      child: Text(
+                                        "Voir Plus",
+                                        style: TextStyle(
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w600,
+                                          color: const Color(0xffffffff),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ).toList(),
+                      ),
+                    ),
+                  ],
                 ),
               ),
+              SizedBox(
+                height: 46.h,
+              ),
+              Column(
+                children: [
+                  _DefultText(),
+                  ListView.separated(
+                    shrinkWrap: true,
+                    // clipBehavior: Clip.none,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (_, index) => _scheduleItem(),
+                    separatorBuilder: (_, index) => SizedBox(height: 16.h),
+                    itemCount: 3,
+                  ),
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  ElevatedButton(
+                    onPressed: () => {},
+                    style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFFFF7F1E),
+                      elevation: 0,
+                      shadowColor: Colors.transparent,
+                      fixedSize: Size(220.w, 40.h),
+                    ),
+                    child: Text(
+                      "Partager votre avis",
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w600,
+                        color: const Color(0xffffffff),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                ],
+              )
             ],
           ),
         ),
@@ -176,3 +343,86 @@ class _AccueilState extends State<Accueil> {
     );
   }
 }
+
+Widget _scheduleItem() => GestureDetector(
+      onTap: () {},
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 23.w),
+        child: Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: const Color(0xFFF4F4F4),
+                // color: Colors.red,
+                borderRadius: BorderRadius.circular(8.r),
+                boxShadow: [
+                  BoxShadow(
+                    offset: const Offset(0, 2),
+                    blurRadius: 8,
+                    color: Colors.black.withOpacity(.25),
+                  )
+                ],
+              ),
+              child: Padding(
+                padding: EdgeInsets.only(left: 14.w, top: 15.h, bottom: 15.h),
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 30.w,
+                      backgroundColor: const Color(0xFFC4C4C4),
+                    ),
+                    SizedBox(width: 15.w),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Donna Yancey',
+                          style: TextStyle(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w800,
+                            color: const Color(0xFFFF7F1E),
+                          ),
+                        ),
+                        Text(
+                          'NMBRE DE VISITE',
+                          style: TextStyle(
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w400,
+                            color: const Color(0xFF262626),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 31.w),
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              right: 0,
+              top: 0,
+              child: SvgPicture.asset(
+                Assets.PG11_01,
+                height: 21.37.r,
+                width: 21.37.r,
+                fit: BoxFit.fill,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+Widget _DefultText() => Container(
+  margin: EdgeInsets.symmetric(horizontal: 23.w),
+  child: Column(children: [
+    SizedBox(
+      height: 10.h,
+    ),
+    Text("TEMOIGNAGES"),
+    Text("Nos artisans et professionnels parlent de notre plateforme",textAlign:TextAlign.center,),
+    Icon(Icons.vpn_key_outlined, color: Color(0xFFFF7F1E)),
+    SizedBox(
+      height: 10.h,
+    ),
+  ],)
+);
